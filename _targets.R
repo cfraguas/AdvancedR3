@@ -53,6 +53,11 @@ list(
   tar_target(
     name = file,
     command = "data/lipidomics.csv",
-    format = "file"
-  )
+    format = "file",
+  ),
+  tar_target(
+    name = lipidomics,
+    command = readr::read_csv(file,
+                              show_col_types = FALSE)
+)
 )
