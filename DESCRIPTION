@@ -10,5 +10,6 @@ Imports:
     stringr,
     tidyr
 Suggests: 
+    gitcreds,
     styler,
     usethis
