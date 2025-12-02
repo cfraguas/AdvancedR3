@@ -1,16 +1,10 @@
 ---
 title: "Draft Quarto document"
-author: "Your Name"
+author: "Conchita Fraguas"
 format: html
 ---
 
-## Header 1
+## Testing formatting styles
 
-```{r setup}
-#| include: false
-```
-
-```{r}
-# Code chunk
-```
-
+-   Testing styling
+-   Testing 2
