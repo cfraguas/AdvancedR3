@@ -13,3 +13,5 @@ Suggests:
     gitcreds,
     styler,
     usethis
+URL: https://github.com/cfraguas/AdvancedR3
+BugReports: https://github.com/cfraguas/AdvancedR3/issues
