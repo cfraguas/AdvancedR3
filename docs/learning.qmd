@@ -79,5 +79,14 @@ glm(
 ```
 
 ```{r}
+create_model_results <- function(data) {
+  data |>
+    dplyr::filter(metabolite == "Cholesterol") |>
+    preprocessing() |>
+    fit_model(class ~ value)
+}
+```
 
+```{r}
+create_model_results(lipidomics)
 ```
