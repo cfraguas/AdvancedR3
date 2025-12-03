@@ -11,7 +11,7 @@ create_table_descriptive_stats <-
       dplyr::group_by(metabolite) |>
       dplyr::summarise(dplyr::across(value, list(mean = mean, median = median, sd = sd, iqr = IQR))) |>
       dplyr::mutate(dplyr::across(tidyselect::where(is.numeric), \(x) round(x, digits = 2))) |>
-      dplyr::mutate(MeanSD = glue::glue("{value_mean} ({value_sd})"))  |>
+      dplyr::mutate(MeanSD = glue::glue("{value_mean} ({value_sd})")) |>
       dplyr::mutate(MedianIQR = glue::glue("{value_median} ({value_iqr})")) |>
       dplyr::select(Metabolite = metabolite, "Mean SD" = MeanSD, "Median IQR" = MedianIQR)
   }
@@ -30,4 +30,17 @@ create_plot_distributions <- function(data) {
     ggplot2::geom_histogram() +
     ggplot2::facet_wrap(ggplot2::vars(metabolite), scales = "free") +
     ggplot2::theme_minimal()
+}
+
+#' cleaning_data
+#'
+#' @param data
+#'
+#' @returns clean lipidomics data
+#'
+clean <- function(data) {
+  data |>
+    dplyr::group_by(dplyr::pick(-value)) |>
+    dplyr::summarise(value = mean(value), .groups = "keep") |>
+    dplyr::ungroup()
 }
