@@ -65,12 +65,26 @@ preprocessing <- function(data) {
 #'
 #' @returns fitting model
 
-fit_model <- function(data,model) {
+fit_model <- function(data, model) {
   data |>
     stats::glm(model, data = data, family = binomial) |>
     broom::tidy(exponentiate = TRUE) |>
-    dplyr::mutate(metabolite = unique(data$metabolite),
-                  model = format(model),
-                  .before = everything()
+    dplyr::mutate(
+      metabolite = unique(data$metabolite),
+      model = format(model),
+      .before = everything()
     )
+}
+
+#' Model cholesterol
+#'
+#' @param data
+#'
+#' @returns Model cholesterol
+
+create_model_results <- function(data) {
+  data |>
+    dplyr::filter(metabolite == "Cholesterol") |>
+    preprocessing() |>
+    fit_model(class ~ value)
 }
