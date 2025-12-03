@@ -44,3 +44,16 @@ clean <- function(data) {
     dplyr::summarise(value = mean(value), .groups = "keep") |>
     dplyr::ungroup()
 }
+
+#' preprocessing
+#'
+#' @param data
+#'
+#' @returns preprocessing
+preprocessing <- function(data) {
+  data |>
+    dplyr::mutate(
+      class = as.factor(class),
+      value = scale(value)
+    )
+}

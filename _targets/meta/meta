@@ -2,10 +2,11 @@ name|type|data|command|depend|seed|path|time|size|bytes|format|repository|iterat
 data|stem||87f5902ed953433b|2c530c1562a7fbd1|33550471||t20424.5726819169s||0|rds|local|vector|||0.01||could not find function 'tibble'
 file|stem|c44b806f3841f535|09442fac263aded2|2c530c1562a7fbd1|1735323524|data/lipidomics.csv|t20417.5494527435s|s24277b|24277|file|local|vector|||0.001||
 clean_data|stem|27843243777b48be|3581da8441de7334|29c8fc756066bd8c|-259385813||t20425.5785578031s|s4137b|4137|rds|local|vector|||0.032||
-clean|function|ce06151f5b2133d2
-create_table_descriptive_stats|function|04b4269f65bc3830
-create_plot_distributions|function|b411ca55e4bdd968
 lipidomics|stem|27843243777b48be|e7a0b51b4c5fd316|8766f2d0e3176a68|-1498393010||t20425.584121843s|s4137b|4137|rds|local|vector|||0.618||
 plot_distributions|stem|62dc312dbd257bc8|01ce942be37808d6|a8d215c87dc7c7e4|222080706||t20425.5841305234s|s270492b|270492|rds|local|vector|||0.435||
 table_descriptive_stats|stem|0946b94a4f6d9e8c|34e33bc9eaef7fce|39558965a91292e3|1291134815||t20425.5841313894s|s556b|556|rds|local|vector|||0.019||
-quarto_doc|stem|8ead34a53a0eddec|17ff11b3307356f6|037561a95d1f2a66|1582462002|docs/learning.html*docs/learning.qmd|t20425.5842192023s|s31641b|31641|file|local|vector|||7.555||
+clean|function|ce06151f5b2133d2
+create_table_descriptive_stats|function|04b4269f65bc3830
+create_plot_distributions|function|b411ca55e4bdd968
+preprocess|function|27efdd529f320467
+quarto_doc|stem|8ead34a53a0eddec|17ff11b3307356f6|037561a95d1f2a66|1582462002|docs/learning.html*docs/learning.qmd|t20425.5842192023s||31641|file|local|vector|||8.345||! Error running quarto CLI from R. Caused by error: ✖ Error returned by quarto CLI. ℹ Rerun with `quiet = FALSE` to see the full error message. Caused by error: ! System command 'quarto' failed
