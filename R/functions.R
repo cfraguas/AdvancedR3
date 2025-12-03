@@ -2,7 +2,8 @@
 #'
 #' @param data
 #'
-#' @returns summarised mean + SD rounded metabolite data values
+#' @returns “A data.frame/tibble.”
+#'  summarised mean + SD rounded metabolite data values
 
 create_table_descriptive_stats <-
   function(data) {

@@ -63,7 +63,11 @@ list(
   tar_quarto(
   name = quarto_doc,
   path = "docs/learning.qmd"
+  ),
+  tar_target(
+    name = table_descriptive_stats,
+    command = create_table_descriptive_stats(lipidomics)
   )
- )
+  )
 
 

@@ -25,6 +25,23 @@ lipidomics |>
   select(Metabolite = metabolite, "Mean SD" = "MeanSD")
 ```
 
+## Results : basic stats table
+
 ```{r}
-create_table_descriptive_stats(lipidomics)
+tar_read(table_descriptive_stats) |>
+  knitr::kable(
+    caption = "The mean and SD of metabolites in the lipidomics dataset"
+  )
+```
+
+## Plot of distribution
+
+```{r}
+ggplot(
+  lipidomics,
+  aes(x = value)
+) +
+  geom_histogram() +
+  facet_wrap(vars(metabolite), scales = "free") +
+  theme_minimal()
 ```
