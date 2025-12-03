@@ -57,3 +57,20 @@ preprocessing <- function(data) {
       value = scale(value)
     )
 }
+
+#' Fitting model
+#'
+#' @param data
+#' @param model
+#'
+#' @returns fitting model
+
+fit_model <- function(data,model) {
+  data |>
+    stats::glm(model, data = data, family = binomial) |>
+    broom::tidy(exponentiate = TRUE) |>
+    dplyr::mutate(metabolite = unique(data$metabolite),
+                  model = format(model),
+                  .before = everything()
+    )
+}
