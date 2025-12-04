@@ -58,33 +58,17 @@ clean(lipidomics)
 preprocessing(lipidomics)
 ```
 
+## Running multiple models
+
 ```{r}
 just_cholesterol <- lipidomics |>
   filter(metabolite == "Cholesterol") |>
   preprocessing()
-```
 
-```{r}
-glm(
-  formula = class ~ value,
-  data = just_cholesterol,
-  family = binomial
-) |>
-  broom::tidy(exponentiate = TRUE) |>
-  mutate(
-    metabolite = unique(just_cholesterol$metabolite),
-    model = format(class ~ value),
-    .before = everything()
-  )
-```
-
-```{r}
-create_model_results <- function(data) {
-  data |>
-    dplyr::filter(metabolite == "Cholesterol") |>
-    preprocessing() |>
-    fit_model(class ~ value)
-}
+lipidomics |>
+  filter(metabolite == "Cholesterol") |>
+  preprocessing() |>
+  fit_all_models()
 ```
 
 ```{r}

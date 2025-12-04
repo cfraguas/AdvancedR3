@@ -75,7 +75,7 @@ list(
     command = create_plot_distributions(lipidomics)
   ),
   tar_target(
-    name = model_creating,
+    name = final_model,
     command = create_model_results(lipidomics)
-  ),
+  )
 )
